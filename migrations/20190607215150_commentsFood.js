@@ -1,5 +1,5 @@
 exports.up = function (knex, Promise) {
-  return knex.schema.createTable('comments', function (table) {
+  return knex.schema.createTable('commentsFood', function (table) {
     table.increments('id').primary()
     table.integer('userID').notNullable()
     table.integer('topicID').notNullable()
@@ -10,5 +10,5 @@ exports.up = function (knex, Promise) {
 }
 exports.down = function (knex, Promise) {
   return knex.schema
-    .dropTable('comments')
+    .dropTable('commentsFood')
 }
