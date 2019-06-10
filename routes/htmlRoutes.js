@@ -1,6 +1,6 @@
 // Dependecies
 const Comments = require('../models/comments')
-const Topics = require('../models/topics')
+// const Topics = require('../models/topics')
 
 /**
  * htmlRoutes: This routes file renders views e.g. handlebars pages
@@ -10,18 +10,14 @@ const Topics = require('../models/topics')
  */
 module.exports = function (app) {
   // Load index page
-  app.get('/', function (req, res) {
-    Topics.findAll()
-      .then(function (dbExamples) {
-        res.render('all', {
-          msg: 'Welcome!',
-          topics: dbExamples
-        })
-      })
+  app.get('/login', function (req, res) {
+    res.render('login.html')
   })
-
+  app.get('/', function (req, res) {
+    res.render('index.html')
+  })
   // Load Commentspage and pass in an Commentsby id
-  app.get('/api/board/:id', function (req, res) {
+  app.get('/board/:id', function (req, res) {
     Comments.displayBoard({ where: { id: req.params.id } })
       .then(function (dbComments) {
         res.render('board', {
@@ -30,16 +26,16 @@ module.exports = function (app) {
       })
   })
 
-  app.get('/api/board', function (req, res) {
+  app.get('/all', function (req, res) {
     res.render('all.html')
   })
 
-  app.get('/api/board/dogs', function (req, res) {
+  app.get('/board/dogs', function (req, res) {
     res.render('dogs.html')
   })
 
   // Render 404 page for any unmatched routes
-  app.get('*', function (req, res) {
-    res.render('404')
-  })
+  // app.get('*', function (req, res) {
+  // res.render('404')
+  // })
 }

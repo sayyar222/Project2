@@ -1,6 +1,6 @@
 // Dependencies
 const Comments = require('../models/comments')
-
+const Users = require('../models/users')
 const Topics = require('../models/topics')
 
 /**
@@ -24,8 +24,8 @@ module.exports = function (app) {
       })
   })
   // Get all examples
-  app.get('/api/board/dogs', function (req, res) {
-    var boardName = 'dogs'
+  app.get('/api/board/cats', function (req, res) {
+    var boardName = 'cats'
     Comments.displayBoard(boardName)
       .then(results => {
         console.log(`
@@ -57,6 +57,18 @@ module.exports = function (app) {
   // POST route for saving a new todo. You can create a todo using the data on req.body
   app.post('/api/new', function (req, res) {
     Comments.create(req.body)
+      .then(results => {
+        console.log(`
+        *****
+        Comments.create():
+        ${results}`)
+
+        res.json(results)
+      })
+  })
+  // POST route for saving a new todo. You can create a todo using the data on req.body
+  app.post('/api/newuser', function (req, res) {
+    Users.create(req.body)
       .then(results => {
         console.log(`
         *****
