@@ -6,18 +6,17 @@ document.querySelector('#add-btn').addEventListener('click', function (event) {
   event.preventDefault()
 
   // Make a newBook object
-  var newUser = {
+  var updatedUser = {
     userName: document.querySelector('#exampleInputEmail1').value.trim(),
     password: document.querySelector('#exampleInputPassword1').value.trim()
   }
 
-  // Send the POST request.
-  fetch('/api/newuser', {
-    method: 'POST',
+  // This function updates a todo in our database
+  fetch('/api/user/' + updatedUser.userName, {
+    method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newUser)
-  })
-    // On success, run the following code
+    body: JSON.stringify(updatedUser)
+  }) // On success, run the following code
     .then(function (data) {
       // Log the data we found
       console.log(data)
@@ -25,5 +24,7 @@ document.querySelector('#add-btn').addEventListener('click', function (event) {
   // Empty each input box by replacing the value with an empty string
   document.querySelector('#exampleInputPassword1').value = ''
   document.querySelector('#exampleInputEmail1').value = ''
+  document.querySelector('#message').insertAdjacentHTML('afterbegin', 'password updated!')
 })
+
 /* eslint-enable no-undef */
