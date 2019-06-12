@@ -26,6 +26,15 @@ class Comments {
     return knex(this.table)
       .where('board', boardName)
   }
+  findAuthor (author) {
+    return knex(this.table)
+      .where('userName', author)
+  }
+  findTopic (topic) {
+    return knex(this.table)
+      .where('topic', topic)
+  }
+
   /**
    * create a new topic
    *

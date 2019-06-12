@@ -28,6 +28,11 @@ class Users {
       .returning('id')
       .insert(values)
   }
+  update (where, values) {
+    return knex(this.table)
+      .where(where)
+      .update(values)
+  }
 }
 
 module.exports = new Users()

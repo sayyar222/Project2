@@ -78,4 +78,38 @@ module.exports = function (app) {
         res.json(results)
       })
   })
+
+  // PUT route for updating todos. The updated todo will be available in req.body
+  app.put('/api/user/:userName', function (req, res) {
+    // var updateUser = req.params.userName
+    Users.update(req.params, req.body)
+      .then(results => {
+        console.log(`
+        *****
+        Users.update():
+        ${results}`)
+
+        res.json(results)
+      })
+  })
+  app.get('/api/author/:author', function (req, res) {
+    Comments.findAuthor(req.params.author)
+      .then(results => {
+        console.log(`
+        *****
+        Comments.findAuthor():
+         ${results.length ? results : 'No records found'}`)
+        res.json(results)
+      })
+  })
+  app.get('/api/topic/:topic', function (req, res) {
+    Comments.findTopic(req.params.topic)
+      .then(results => {
+        console.log(`
+      *****
+      Comments.findTopic():
+       ${results.length ? results : 'No records found'}`)
+        res.json(results)
+      })
+  })
 }
