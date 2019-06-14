@@ -1,3 +1,17 @@
+const faker = require('faker')
+
+const createAccount = () => ({
+
+  randomName: faker.internet.userName(),
+  randomPassword: faker.internet.password()
+
+})
+
+const fakeUser = []
+const num = 100
+for (let i = 0; i < num; i++) {
+  fakeUser.push(createAccount())
+}
 
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
@@ -32,7 +46,6 @@ exports.seed = function (knex, Promise) {
           media: 'https://cdn1.medicalnewstoday.com/content/images/articles/318/318774/a-woman-practicing-yoga-on-the-beach.jpg',
           text: 'Yoga can help to treat depression'
         }
-
       ])
     })
 }
