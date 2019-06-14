@@ -1,30 +1,24 @@
+const faker = require('faker')
+
+const createAccount = () => ({
+
+  userName: faker.internet.userName(),
+  Password: faker.internet.password()
+
+})
 
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
   return knex('loginInfo').del()
     .then(function () {
       // Inserts seed entries
-      return knex('loginInfo').insert([
-        {
-          id: 1,
-          userName: 'Eric',
-          password: 'Eric1234'
-        },
-        {
-          id: 2,
-          userName: 'Sasan',
-          password: 'Sasan1234'
-        },
-        {
-          id: 3,
-          userName: 'Ernie',
-          password: 'Ernie1234'
-        },
-        {
-          id: 4,
-          userName: 'Blue',
-          password: 'Blue1234'
-        }
-      ])
+
+      const fakeUser = []
+      const num = 10
+      for (let i = 0; i < num; i++) {
+        fakeUser.push(createAccount())
+      }
+
+      return knex('loginInfo').insert(fakeUser)
     })
 }

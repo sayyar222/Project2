@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sayyar222/Project2#readme",
   "dependencies": {
+    "faker": "^4.1.0",
     "knex": "^0.17.3"
   }
 }
