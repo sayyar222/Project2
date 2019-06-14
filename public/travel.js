@@ -14,7 +14,7 @@ fetch('/api/board/travel')
         <div class="col-1 pr-0 mr-0 ">
           <h4>Topic:</h4>
         </div>
-        <div class="col-1 p-0 text-uppercase">
+        <div class="text-uppercase">
           <h4>${data[i].topic}</h4>
         </div>
       </div>
