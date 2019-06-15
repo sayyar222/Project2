@@ -7,8 +7,8 @@ document.querySelector('#add-btn').addEventListener('click', function (event) {
 
   // Make a newBook object
   var newUser = {
-    userName: document.querySelector('#exampleInputEmail1').value.trim(),
-    password: document.querySelector('#exampleInputPassword1').value.trim()
+    userName: document.querySelector('#InputEmail1').value.trim(),
+    password: document.querySelector('#InputPassword1').value.trim()
   }
 
   // Send the POST request.
@@ -23,7 +23,7 @@ document.querySelector('#add-btn').addEventListener('click', function (event) {
       console.log(data)
     })
   // Empty each input box by replacing the value with an empty string
-  document.querySelector('#exampleInputPassword1').value = ''
-  document.querySelector('#exampleInputEmail1').value = ''
+  document.querySelector('#InputPassword1').value = ''
+  document.querySelector('#InputEmail1').value = ''
 })
 /* eslint-enable no-undef */

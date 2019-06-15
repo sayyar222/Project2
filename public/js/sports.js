@@ -1,7 +1,7 @@
 
 /* eslint-disable no-undef */
 // Make a get request to our api route that will return every book
-fetch('/api/board/dogs')
+fetch('/api/board/sports')
   .then(response => response.json())
   .then(function (data) {
     // For each book that our server sends us back
@@ -14,9 +14,7 @@ fetch('/api/board/dogs')
         <div class="col-1 pr-0 mr-0 ">
           <h4>Topic:</h4>
         </div>
-
         <div class="text-uppercase">
-
           <h4>${data[i].topic}</h4>
         </div>
       </div>
