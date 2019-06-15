@@ -1,7 +1,7 @@
 
 /* eslint-disable no-undef */
 // Make a get request to our api route that will return every book
-fetch('/api/board/dogs')
+fetch('/api/board/movies')
   .then(response => response.json())
   .then(function (data) {
     // For each book that our server sends us back

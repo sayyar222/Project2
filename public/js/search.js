@@ -17,8 +17,20 @@ document.querySelector('#author-search-btn').addEventListener('click', function 
       document.querySelector('#message').innerHTML = ''
       for (var i = 0; i < data.length; i++) {
         // Create a parent div to hold book data
-
-        var wellSection = `<div class="well" id="book-well-${i}"><h2>${(i + 1)}.${data[i].board}</h2><h4>Author: ${data[i].userName}</h4><h4>topic: ${data[i].topic}</h4><h4>text: ${data[i].text}</h4><img src = '${data[i].media}'> ~~~~~~~</div>`
+        var wellSection = `<div class="well bg-light container border border-info border-1 mb-2 p-2 " id="book-well-${i}">
+        <h4>Author: ${data[i].userName}</h4>
+        <div class="row">
+          <div class="col-1 pr-0 mr-0 ">
+            <h4>Topic:</h4>
+          </div>
+          <div class="text-uppercase">
+            <h4>${data[i].topic}</h4>
+          </div>
+        </div>
+        <h4> ${data[i].text}</h4>
+        <img src = '${data[i].media}' class="w-25"> 
+        </div>`
+        // var wellSection = `<div class="well" id="book-well-${i}"><h2>${(i + 1)}.${data[i].board}</h2><h4>Author: ${data[i].userName}</h4><h4>topic: ${data[i].topic}</h4><h4>text: ${data[i].text}</h4><img src = '${data[i].media}'> ~~~~~~~</div>`
 
         // append the well to the well section
         document.querySelector('#message').insertAdjacentHTML('afterbegin', wellSection)
@@ -42,8 +54,20 @@ document.querySelector('#topic-search-btn').addEventListener('click', function (
       document.querySelector('#message').innerHTML = ''
       for (var i = 0; i < data.length; i++) {
         // Create a parent div to hold book data
-
-        var wellSection = `<div class="well" id="book-well-${i}"><h2>${(i + 1)}.${data[i].board}</h2><h4>Author: ${data[i].userName}</h4><h4>topic: ${data[i].topic}</h4><h4>text: ${data[i].text}</h4><img src = '${data[i].media}'> ~~~~~~~</div>`
+        var wellSection = `<div class="well bg-light container border border-info border-1 mb-2 p-2 " id="book-well-${i}">
+        <h4>Author: ${data[i].userName}</h4>
+        <div class="row">
+          <div class="col-1 pr-0 mr-0 ">
+            <h4>Topic:</h4>
+          </div>
+          <div class="text-uppercase">
+            <h4>${data[i].topic}</h4>
+          </div>
+        </div>
+        <h4> ${data[i].text}</h4>
+        <img src = '${data[i].media}' class="w-25"> 
+        </div>`
+        // var wellSection = `<div class="well" id="book-well-${i}"><h2>${(i + 1)}.${data[i].board}</h2><h4>Author: ${data[i].userName}</h4><h4>topic: ${data[i].topic}</h4><h4>text: ${data[i].text}</h4><img src = '${data[i].media}'> ~~~~~~~</div>`
 
         // append the well to the well section
         document.querySelector('#message').insertAdjacentHTML('afterbegin', wellSection)

@@ -12,7 +12,7 @@ document.querySelector('#add-btn').addEventListener('click', function (event) {
     media: document.querySelector('#media').value.trim(),
     text: document.querySelector('#text').value.trim(),
     type: 1,
-    board: 'dogs'
+    board: document.querySelector('#board').value.trim()
   }
 
   // Send the POST request.
@@ -32,5 +32,6 @@ document.querySelector('#add-btn').addEventListener('click', function (event) {
   document.querySelector('#author').value = ''
   document.querySelector('#media').value = ''
   document.querySelector('#text').value = ''
+  document.querySelector('#board').value = ''
 })
 /* eslint-enable no-undef */
