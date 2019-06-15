@@ -5,7 +5,7 @@ module.exports = {
   connection: {
     host: 'localhost',
     port: 3306,
-    user: 'newuser',
+    user: 'nodeuser',
     password: '',
     database: 'db_1234chan',
     debug: ['ComQueryPacket', 'RowDataPacket']
